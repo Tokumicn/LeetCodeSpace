@@ -43,8 +43,33 @@ func (this *CQueue) DeleteHead() int {
  */
 
 func main() {
-	q := Constructor()
-	q.AppendTail(3)
-	fmt.Println(q.DeleteHead())
+	//q := Constructor()
+	//q.AppendTail(3)
+	//fmt.Println(q.DeleteHead())
 
+	//s := "We are happy."
+	//s = strings.ReplaceAll(s, " ", "%20")
+
+	s := "abcdefg"
+	n := 2
+
+	res := s[n:] + s[0:n]
+
+	fmt.Println(res)
+
+}
+
+func firstUniqChar(s string) byte {
+	c := [26]int{}
+	for _, ch := range s {
+		c[ch-'a'] += 1
+	}
+
+	for _, ch := range s {
+		if c[ch-'a'] == 1 {
+			return byte(ch)
+		}
+	}
+
+	return ' '
 }
